@@ -1,14 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import RootApp from "./App";
+import App from "./components/App";
+import * as serviceWorker from "./serviceWorker";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <Router>
+    <div>
+      <Switch>
+        <Route exact path="/" component={RootApp} />
+        <Route path="/quiz" component={App} />
+        {/* <App /> */}
+      </Switch>
+    </div>
+  </Router>,
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change

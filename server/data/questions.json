@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "question": "How often do you eat meat and dairy?",
+    "answers": ["Daily", "1 or 2 times", "3+ times per week", "Not at all"]
+  },
+  {
+    "id": 2,
+    "question": "How big are your portions sizes?",
+    "answers": [
+      "Smaller than average",
+      "Average",
+      "Larger than average",
+      "I'm not sure"
+    ]
+  },
+  {
+    "id": 3,
+    "question": "How much food ends up wasted in your household?",
+    "answers": [
+      "None",
+      "1-5 plates per week",
+      "6-10 plates per week",
+      "More than 10 plates per week"
+    ]
+  },
+  {
+    "id": 4,
+    "question": "How often do you eat avocados, asparagus, kiwi fruit or pineapples?",
+    "answers": ["Daily", "1 or 2 times", "3+ times per week", "Not at all"]
+  }
+]
