@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "../assets/quiz.css";
-import Result from "./Result";
-import Quiz from "./Quiz";
+import "../assets/app.scss";
+// import "../assets/app.scss";
+
 // import Question from "./components/Question";
 
 const API = "http://localhost:4001/questions";
@@ -89,43 +89,32 @@ class App extends Component {
     });
   }
 
-  renderQuiz() {
-    return (
-      <Quiz
-        answer={this.state.answer}
-        answerOptions={this.state.answerOptions}
-        questionId={this.state.questionId}
-        question={this.state.question}
-        questionTotal={this.state.questions.length}
-        onAnswerSelected={this.handleAnswerSelected}
-      />
-    );
-  }
-
-  renderResult() {
-    return <Result quizResult={this.state.result} />;
-  }
-
   render() {
     return (
       <>
         {/* <div className="questionProgress"></div> */}
-        {/* <div className="questionNumber">
+        <div className="progress-bar">
+          <div className="progress-bar-25" />
+          <p>Diet</p>
+        </div>
+        <br></br>
+        <div className="questionNumber">
           Question {this.state.questions[0].id} of {this.state.questions.length}
         </div>
         <div className="questionText">{this.state.questions[0].title}</div>
         <div className="questionOptions">
           <button>{this.state.questions[0].answers[0]}</button>
           <button>{this.state.questions[0].answers[1]}</button>
+        </div>
+        <div className="questionOptions">
           <button>{this.state.questions[0].answers[2]}</button>
           <button>{this.state.questions[0].answers[3]}</button>
         </div>
-
-        <button className="btn-label-bk">
-          <div>Take the survey</div>
-        </button> */}
-        <h1>Quiz</h1>
-        {this.state.result ? this.renderResult() : this.renderQuiz()}
+        <button className="survey-button">
+          <label className="survey-label">Next question</label>
+        </button>
+        {/* <h1>Quiz</h1> */}
+        {/* {this.state.result ? this.renderResult() : this.renderQuiz()} */}
       </>
     );
   }

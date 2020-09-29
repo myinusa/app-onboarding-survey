@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 // import './App.css';
 // import Question from "./components/Question";
-import "./assets/start-screen.css";
+import Button from "react-bootstrap/Button";
+// import "./assets/start-screen.css";
+import "./assets/app.scss"
 
 class App extends Component {
   constructor(props) {
@@ -32,7 +34,7 @@ class App extends Component {
 
   onSubmit = () => {
     // return <Redirect to="/quiz" />;
-    this.props.history.push("/quiz");
+    this.props.history.push("/survey");
   };
 
   render() {
@@ -43,10 +45,10 @@ class App extends Component {
           Next we have a short 2–3 minute survey covering Diet, Home, Travel,
           and Other that will let us calculate your personal carbon footprint.
         </div>
-        <button className="btn-label-bk" onClick={this.onSubmit}>
-          <div>Take the survey</div>
+        <Button className="survey-button" onClick={this.onSubmit}>
+          <label className="survey-label">Take the survey</label>
           {/* {this.state.showComponent ? this.renderQuiz() : <div />} */}
-        </button>
+        </Button>
       </>
     );
   }

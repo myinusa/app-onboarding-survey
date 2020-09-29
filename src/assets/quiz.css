@@ -35,7 +35,6 @@
   background: #48b07a;
 }
 
-
 .questionText {
   position: absolute;
   width: 295px;
@@ -54,11 +53,12 @@
 
 .questionOptions {
   display: flex;
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* align-content: flex-start; */
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
 }
 .questionOptions > button {
+  position: relative;
   width: 139.31px;
   height: 89px;
   margin: 10px;
@@ -68,6 +68,10 @@
   border-radius: 10px;
 }
 
+.questionOptions > button:focus {
+  background: #ec5569;
+}
+
 .questionProgress {
   /* questionsProgress */
   position: absolute;
@@ -75,4 +79,16 @@
   height: 29px;
   left: 92px;
   top: 36px;
+}
+
+@media only screen and (min-device-width: 320px)  and (max-device-width: 568px) {
+  .questionOptions {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 100px;
+    height: 100px;
+  }​
 }

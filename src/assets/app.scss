@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.questionProgress {
+  /* questionsProgress */
+  position: absolute;
+  width: 190px;
+  height: 29px;
+  left: 92px;
+  top: 36px;
+}
+
+@media only screen and (max-width: 568px) and (min-width: 320px) {
+  .questionNumber {
+    position: absolute;
+    width: 88px;
+    height: 14px;
+    left: 41px;
+    top: 103px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: #a7a9b1;
+  }
+
+  .questionText {
+    position: absolute;
+    width: 295px;
+    height: 49px;
+    left: 21px;
+    top: 133px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17px;
+    // line-height: 23px;
+
+    color: #373737;
+  }
+
+  .questionOptions {
+    display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // align-content: flex-start;
+  }
+  .questionOptions > button {
+    position: relative;
+    top: 12em;
+    width: 139.31px;
+    height: 89px;
+    margin: 10px;
+    // padding: 10px;
+    background: #ffffff;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+  }
+
+  .questionOptions > button:focus {
+    background: #ec5569;
+  }
+
+  .startScreen-Title {
+    display: flex;
+    // justify-content: center;
+    // align-items: center;
+    padding: 1em;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+
+    position: relative;
+    top: 8em;
+
+    color: #000000;
+  }
+  .startScreen-Desc {
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    position: relative;
+    top: 11em;
+
+    color: #000000;
+  }
+
+  .survey-button {
+    position: fixed;
+    width: 295px;
+    height: 50px;
+    background: #48b07a;
+    left: 10px;
+    bottom: 4em;
+  }
+
+  .survey-button-continue {
+    position: fixed;
+    width: 295px;
+    height: 50px;
+    background: #48b07a;
+    left: 10px;
+    bottom: 8em;
+  }
+
+  .survey-label {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: #ffffff;
+  }
+
+  .progress-bar-25 {
+    width: 40px;
+    height: 10px;
+    position: relative;
+    top: 36px;
+    left: 4em;
+    background: #f2a7b1;
+  }
+  .progress-bar > p {
+    position: absolute;
+    width: 22px;
+    height: 14px;
+    left: 70px;
+    top: 41px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+
+    color: #a7a9b1;
+  }
+
+  .header-score {
+    width: 375px;
+    height: 150px;
+    background: #ec5569;
+    position: relative;
+    bottom: 0.7em;
+  }
+  .header-score > h2 {
+    left: 100px;
+    top: 43px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 75px;
+    text-align: center;
+
+    color: #ffffff;
+  }
+
+  .header-score > p {
+    left: 124px;
+    top: 111px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #ffffff;
+  }
+
+  .footer-score {
+    width: 375px;
+    height: 238px;
+    left: 0px;
+    top: 429px;
+
+    background: #ffffff;
+    position: relative;
+    // bottom: 0.7em;
+  }
+
+  .footer-score > p {
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+
+    // bottom: 6em;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+/* startScreen-Desc */
+.startScreen-Desc {
+  width: 307px;
+  height: 123px;
+  // position: fixed;
+  // top: 50%;
+  // left: 50%;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+
+  color: #000000;
+}
+
+/* startScreen-Title */
+
+// .startScreen-Title {
+//   position: fixed;
+//   top: 35%;
+//   left: 36%;
+//   width: 257px;
+//   height: 55px;
+
+//   font-family: Roboto;
+//   font-style: normal;
+//   font-weight: bold;
+//   font-size: 24px;
+//   line-height: 28px;
+//   text-align: center;
+
+//   color: #000000;
+// }
+
+.btn-label-bk {
+  /* Button */
+
+  // position: absolute;
+  width: 295px;
+  height: 50px;
+  // left: 40px;
+  // top: 528px;
+
+  background: #48b07a;
+}
+
+/* TODO */
+.label {
+  position: absolute;
+  width: 99px;
+  height: 16px;
+  left: 138px;
+  top: 545px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+
+  color: #ffffff;
+}
