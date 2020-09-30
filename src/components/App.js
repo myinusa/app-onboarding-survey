@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import "../assets/app.scss";
-// import "../assets/app.scss";
+import { fetchQuestionsSuccess } from "../store/actions/questions";
 
-// import Question from "./components/Question";
-
+// Define the address we'll be using to fetch data
 const API = "http://localhost:4001/questions";
 
 class App extends Component {
@@ -19,11 +18,12 @@ class App extends Component {
       counter: 0,
       answerOptions: [],
       answer: "",
-      answersCount: {},
       result: "",
     };
+    this.setNextQuestion = this.setNextQuestion.bind(this);
   }
 
+  // Getting data via fetch method and setting state with map
   async componentDidMount() {
     this.setState({ isLoading: true });
     await fetch(API)
@@ -39,46 +39,38 @@ class App extends Component {
         });
       })
       .catch((error) => this.setState({ error }));
-    // console.log(Object.keys(this.state.questions));
-    // let i = 0;
-    // i += 1;
-    // console.log(this.state.questions[i]);
     this.setQuestion();
   }
 
   async setQuestion() {
-    // const mappedAnswers = this.state.questions[0].answers;
     await this.setState({
       question: this.state.questions[0].title,
       answerOptions: this.state.questions[0].answers,
     });
-    // console.log(this.state.answerOptions);
   }
 
   handleAnswerSelected(event) {
-    this.setUserAnswer(event.currentTarget.value);
     if (this.state.questionId < this.state.questions.length) {
       setTimeout(() => this.setNextQuestion(), 300);
     } else {
-      setTimeout(() => this.setResults(this.getResults()), 300);
+      this.props.history.push("/result");
+      // setTimeout(() => this.setResults(this.getResults()), 300);
     }
-  }
-
-  setUserAnswer(answer) {
-    this.setState((state, props) => ({
-      answersCount: {
-        ...state.answersCount,
-        [answer]: (state.answersCount[answer] || 0) + 1,
-      },
-      answer: answer,
-    }));
   }
 
   setNextQuestion() {
     const counter = this.state.counter + 1;
-    // const questionId = this.state.questionId + 1;
-    let i = 0;
-    const questionId = this.state.questions[i].id + 1;
+    // if (this.state.questions[counter].id === undefined) {
+    //   this.props.history.push("/result");
+    // }
+    const questionId = this.state.questions[counter].id;
+
+    // TODO It throws an error after the 4th Question so its limited to 3 for now
+    if (counter === 4 || questionId === 4) {
+      // this.setState({ questions: [0].id });
+      this.props.history.push("/result");
+    }
+    // console.log(questionId);
 
     this.setState({
       counter: counter,
@@ -92,31 +84,36 @@ class App extends Component {
   render() {
     return (
       <>
-        {/* <div className="questionProgress"></div> */}
         <div className="progress-bar">
           <div className="progress-bar-25" />
           <p>Diet</p>
         </div>
         <br></br>
         <div className="questionNumber">
-          Question {this.state.questions[0].id} of {this.state.questions.length}
+          Question {this.state.questionId} of {this.state.questions.length}
         </div>
-        <div className="questionText">{this.state.questions[0].title}</div>
+        <div className="questionText">{this.state.question}</div>
         <div className="questionOptions">
-          <button>{this.state.questions[0].answers[0]}</button>
-          <button>{this.state.questions[0].answers[1]}</button>
+          <button>{this.state.answerOptions[0]}</button>
+          <button>{this.state.answerOptions[1]}</button>
         </div>
         <div className="questionOptions">
-          <button>{this.state.questions[0].answers[2]}</button>
-          <button>{this.state.questions[0].answers[3]}</button>
+          <button>{this.state.answerOptions[2]}</button>
+          <button>{this.state.answerOptions[3]}</button>
         </div>
-        <button className="survey-button">
+        <button
+          className="survey-button"
+          onClick={
+            this.state.questions.length
+              ? this.setNextQuestion
+              : this.props.history.push("/result")
+          }
+        >
           <label className="survey-label">Next question</label>
         </button>
-        {/* <h1>Quiz</h1> */}
-        {/* {this.state.result ? this.renderResult() : this.renderQuiz()} */}
       </>
     );
   }
 }
 export default App;
+

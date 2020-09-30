@@ -23,7 +23,7 @@ export default function storeReducer(state = initialState, action) {
       return {
         ...state,
         loading: false,
-        stores: action.questions,
+        questions: action.questions,
       };
 
     case FETCH_QUESTIONS_FAILURE:
