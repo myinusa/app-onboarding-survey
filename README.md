@@ -37,50 +37,6 @@ Select iPhone 5/5SE
 | server/routes/routes.js    | Defines initial endpoint or default                         |
 | server/server.js           | Initialization of server with body parser and cors included |
 
-### Tree
-
-├── README.md
-├── package-lock.json
-├── package.json
-├── public
-│   ├── favicon.ico
-│   ├── index.html
-│   ├── logo192.png
-│   ├── logo512.png
-│   ├── manifest.json
-│   └── robots.txt
-├── server
-│   ├── data
-│   │   └── questions.json
-│   ├── package-lock.json
-│   ├── package.json
-│   ├── routes
-│   │   ├── questions.js
-│   │   └── routes.js
-│   └── server.js
-└── src
-    ├── App.js
-    ├── assets
-    │   └── app.scss
-    ├── components
-    │   ├── App.js
-    │   └── Result.js
-    ├── history.js
-    ├── index.css
-    ├── index.js
-    ├── serviceWorker.js
-    └── store
-        ├── actions
-        │   ├── questions.js
-        │   └── types.js
-        └── reducers
-            ├── index.js
-            └── questionReducer.js
-
-10 directories, 27 files
-
-
-
 ## Dependencies
 
 | List of Dependencies | Location | Description                                                  |
