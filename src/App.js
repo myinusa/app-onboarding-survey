@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Button from "react-bootstrap/Button";
 import "./assets/app.scss";
 
 class App extends Component {
@@ -13,7 +12,7 @@ class App extends Component {
 
   onSubmit = () => {
     this.props.history.push("/survey");
-    // window.location.reload();
+    window.location.reload();
   };
 
   render() {
@@ -24,9 +23,9 @@ class App extends Component {
           Next we have a short 2–3 minute survey covering Diet, Home, Travel,
           and Other that will let us calculate your personal carbon footprint.
         </div>
-        <Button className="survey-button" onClick={this.onSubmit}>
+        <button className="survey-button" onClick={this.onSubmit}>
           <label className="survey-label">Take the survey</label>
-        </Button>
+        </button>
       </>
     );
   }

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "../assets/app.scss";
-import { fetchQuestionsSuccess } from "../store/actions/questions";
 
 // Define the address we'll be using to fetch data
 const API = "http://localhost:4001/questions";
